@@ -1,0 +1,30 @@
+Zastosowalismy metode kiss (keep it simple stupid), poniewaz skorzystalismy z vecotra,
+dzieki temu wyeliminowalismy bledy, ktore mogly wynikac z wlasnej implementacji. Dodatakowo
+vector jest bardzo popularnym typem array, co ulatwia czytelnosc i ewentualne zmiany kodu
+przez innych programistow.
+
+Uzylismy metody DRY(dont repeat yourself), korzystajac z klas, oraz metod, co zapobieglo niepotrzbnego powtarzania sie kodu.
+Dodatkowo ulatwia edycje wybranego fragmentu kodu i zwieksza jego czytelnosc.
+
+KISS - tak
+DRY - tak
+Minimise compiling - 50 : 50
+ADP - tak
+SDP - tak
+SAP - tak
+SOLID:
+	1. Single responsibility - 50 : 50
+	2. Open/closed - tak
+	3. Liskov substitution - nie
+	4. Interface segregation - nie
+	5. Dependency inversion - nie
+GRASP:
+	Expert - tak
+	Creator - tak
+	Controler - 50 : 50
+	Low Coupling - tak
+	High Cohesion - nie
+	Polymorphism - nie
+	Pure Fabrication - tak
+	Indirection - tak
+	Protected Variations - 50 : 50	
