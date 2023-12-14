@@ -1,0 +1,5 @@
+﻿  funkcje.cpp
+C:\Users\pawkrem2\source\repos\kalkulator\kalkulator\funkcje.cpp(21,44): warning C4244: "+=": konwersja z "double" do "float", możliwa utrata danych
+  main.cpp
+  Generowanie kodu...
+  kalkulator.vcxproj -> C:\Users\pawkrem2\source\repos\kalkulator\Debug\kalkulator.exe
