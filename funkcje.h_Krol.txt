@@ -1,0 +1,8 @@
+#pragma once
+class Funkcje {
+public:
+    static double logarytmNaturalny(double x);
+    static double odchylenieStandardowe(double arr[], int n);
+    static double wartoscExponentu(double x);
+    static double maxValue(const double arr[], int n);
+};
