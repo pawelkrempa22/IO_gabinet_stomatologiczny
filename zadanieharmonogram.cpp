@@ -39,7 +39,22 @@ public:
 };
 
 int main() {
+ int main() {
     Harmonogram harmonogram;
+
+  
+    harmonogram.DodajWizyte("2023-01-01", "10:00", "Robert kubek");
+    harmonogram.DodajWizyte("2023-01-02", "14:30", "Alicja lyzka");
+    harmonogram.DodajWizyte("2023-01-03", "11:45", "Pawel Krempa");
+
+    
+    harmonogram.WyswietlHarmonogram();
+
+   
+    harmonogram.WyszukajWizytyDlaPacjenta("Alice Smith");
+
+    return 0;
+}
 
    
 
