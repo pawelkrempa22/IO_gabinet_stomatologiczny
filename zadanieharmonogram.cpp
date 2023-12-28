@@ -39,11 +39,9 @@ public:
 };
 
 int main() {
+ Harmonogram harmonogram;
 
-    Harmonogram harmonogram;
-
-  
-    harmonogram.DodajWizyte("2023-01-01", "10:00", "Robert kubek");
+  harmonogram.DodajWizyte("2023-01-01", "10:00", "Robert kubek");
     harmonogram.DodajWizyte("2023-01-02", "14:30", "Alicja lyzka");
     harmonogram.DodajWizyte("2023-01-03", "11:45", "Pawel Krempa");
 
@@ -52,11 +50,5 @@ int main() {
 
    
     harmonogram.WyszukajWizytyDlaPacjenta("Robert kubek");
-
-
-   
-
-   
-
-    return 0;
+ return 0;
 }
