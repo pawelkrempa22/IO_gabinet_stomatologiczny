@@ -39,7 +39,7 @@ public:
 };
 
 int main() {
- int main() {
+
     Harmonogram harmonogram;
 
   
@@ -51,10 +51,8 @@ int main() {
     harmonogram.WyswietlHarmonogram();
 
    
-    harmonogram.WyszukajWizytyDlaPacjenta("Alice Smith");
+    harmonogram.WyszukajWizytyDlaPacjenta("Robert kubek");
 
-    return 0;
-}
 
    
 
