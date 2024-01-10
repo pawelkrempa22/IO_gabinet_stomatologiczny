@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-// Product class
+// Produkt - klasa reprezentująca pizzę
 class Pizza {
 public:
     void setDough(const std::string& dough) {
@@ -28,7 +28,7 @@ private:
     std::string topping;
 };
 
-// Abstract builder class
+// Interfejs budowniczego
 class PizzaBuilder {
 public:
     virtual void buildDough() = 0;
@@ -37,7 +37,7 @@ public:
     virtual Pizza getPizza() const = 0;
 };
 
-// Concrete builder for a specific type of pizza
+// Konkretny budowniczy dla konkretnego typu pizzy (Hawajska)
 class HawaiianPizzaBuilder : public PizzaBuilder {
 public:
     void buildDough() override {
@@ -60,7 +60,7 @@ private:
     Pizza pizza;
 };
 
-// Concrete builder for another type of pizza
+// Konkretny budowniczy dla innego typu pizzy (Pikantna)
 class SpicyPizzaBuilder : public PizzaBuilder {
 public:
     void buildDough() override {
@@ -83,7 +83,30 @@ private:
     Pizza pizza;
 };
 
-// Director class that orchestrates the construction
+// Nowy konkretny budowniczy dla dodatkowego typu pizzy (Król)
+class KrolPizzaBuilder : public PizzaBuilder {
+public:
+    void buildDough() override {
+        pizza.setDough("Thick Dough");
+    }
+
+    void buildSauce() override {
+        pizza.setSauce("Royal Tomato Sauce");
+    }
+
+    void buildTopping() override {
+        pizza.setTopping("Gold and Caviar");
+    }
+
+    Pizza getPizza() const override {
+        return pizza;
+    }
+
+private:
+    Pizza pizza;
+};
+
+// Kierownik - klasa, która orchestratuje budowę
 class Cook {
 public:
     void makePizza(PizzaBuilder& builder) {
@@ -93,22 +116,30 @@ public:
     }
 };
 
+// Funkcja main
 int main() {
     Cook cook;
-    HawaiianPizzaBuilder hawaiianBuilder;
-    SpicyPizzaBuilder spicyBuilder;
 
-    // Wariant 1
+    // Budowniczy dla pizzy hawajskiej
+    HawaiianPizzaBuilder hawaiianBuilder;
     cook.makePizza(hawaiianBuilder);
     Pizza hawaiianPizza = hawaiianBuilder.getPizza();
-    std::cout << "Hawaiian Pizza Configuration 1:" << std::endl;
+    std::cout << "Hawaiian Pizza Configuration:" << std::endl;
     hawaiianPizza.displayPizza();
 
-    // Wariant 2
+    // Budowniczy dla pikantnej pizzy
+    SpicyPizzaBuilder spicyBuilder;
     cook.makePizza(spicyBuilder);
     Pizza spicyPizza = spicyBuilder.getPizza();
-    std::cout << "Spicy Pizza Configuration 2:" << std::endl;
+    std::cout << "\nSpicy Pizza Configuration:" << std::endl;
     spicyPizza.displayPizza();
+
+    // Nowy budowniczy dla pizzy Król
+    KrolPizzaBuilder krolBuilder;
+    cook.makePizza(krolBuilder);
+    Pizza krolPizza = krolBuilder.getPizza();
+    std::cout << "\nKról Pizza Configuration:" << std::endl;
+    krolPizza.displayPizza();
 
     return 0;
 }
