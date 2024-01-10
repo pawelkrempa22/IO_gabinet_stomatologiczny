@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-// Product class
+// Klasa produktu
 class Computer {
 public:
     void setCPU(const std::string& cpu) {
@@ -28,7 +28,7 @@ private:
     std::string storage_;
 };
 
-// Builder interface
+// Interfejs budowniczego
 class ComputerBuilder {
 public:
     virtual void buildCPU(const std::string& cpu) = 0;
@@ -37,7 +37,7 @@ public:
     virtual Computer getResult() = 0;
 };
 
-// Concrete Builder
+// Konkretny budowniczy
 class DesktopComputerBuilder : public ComputerBuilder {
 public:
     DesktopComputerBuilder() {
@@ -64,7 +64,7 @@ private:
     Computer computer_;
 };
 
-// Director
+// Dyrektor
 class ComputerAssembler {
 public:
     Computer assembleComputer(ComputerBuilder& builder) {
@@ -81,13 +81,13 @@ int main() {
 
     // Konfiguracja 1
     Computer desktop1 = assembler.assembleComputer(desktopBuilder);
-    std::cout << "Desktop Computer Configuration 1:" << std::endl;
+    std::cout << "Desktop Computer Configuration 1 (Król):" << std::endl;
     desktop1.display();
 
     // Konfiguracja 2
     desktopBuilder = DesktopComputerBuilder(); // Resetujemy buildera
     Computer desktop2 = assembler.assembleComputer(desktopBuilder);
-    std::cout << "Desktop Computer Configuration 2:" << std::endl;
+    std::cout << "Desktop Computer Configuration 2 (Król):" << std::endl;
     desktop2.display();
 
     return 0;
